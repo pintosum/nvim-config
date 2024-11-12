@@ -39,6 +39,11 @@ vim.keymap.set(
     "oif err != nil {<CR>}<Esc>Oreturn err<Esc>"
 )
 
+
+vim.keymap.set("n", "<leader>q", function() vim.cmd("vert 40 split")
+                                               vim.cmd("wincmd r")
+                                               vim.cmd("term") end)
+
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 vim.keymap.set("n", "<leader>gml", "<cmd>CellularAutomaton game_of_life<CR>");
 vim.keymap.set("n", "<leader>ba", "<cmd>CellularAutomaton bad_apple<CR>");
