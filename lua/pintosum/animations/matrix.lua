@@ -1,7 +1,7 @@
 local utf8 = require("utf8")
 
 local matrix = {
-  fps = 30,
+  fps = 50,
   name = 'matrix',
   columns_row = {},
   columns_active = {},
