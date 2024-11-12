@@ -40,9 +40,12 @@ vim.keymap.set(
 )
 
 
-vim.keymap.set("n", "<leader>q", function() vim.cmd("vert 40 split")
-                                               vim.cmd("wincmd r")
-                                               vim.cmd("term") end)
+vim.keymap.set("n", "<leader>q", function()
+  local width = vim.fn.winwidth(0)
+  vim.cmd("vert ".. width/3 .. " split")
+  vim.cmd("wincmd r")
+  vim.cmd("term")
+end)
 
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 vim.keymap.set("n", "<leader>gml", "<cmd>CellularAutomaton game_of_life<CR>");
@@ -53,3 +56,11 @@ vim.keymap.set("n", "<leader>scr", "<cmd>CellularAutomaton scramble<CR>");
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
+
+
+--[[ DAP mappings
+vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
+vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
+vim.keymap.set('n', '<F11>', function() require('dap').step_into() end)
+vim.keymap.set('n', '<F12>', function() require('dap').step_out() end)
+--]]
