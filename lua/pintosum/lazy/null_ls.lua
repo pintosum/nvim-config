@@ -8,7 +8,6 @@ return {
         null_ls.builtins.formatting.eslint,
         null_ls.builtins.formatting.gofmt,
         null_ls.builtins.formatting.blue,
-        null_ls.builtins.formatting.clang_format,
       }
     })
   end
