@@ -57,6 +57,21 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
+-- closing brackets
+local function map(mode, lhs, rhs, opts)
+  local options = { noremap = true }
+  if opts then
+  options = vim.tbl_extend("force", options, opts)
+  end
+  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+end
+
+map('i', '"', '""<left>')
+map('i', '\'', '\'\'<left>')
+map('i', '(', '()<left>')
+map('i', '{<CR>', '{<CR>}<C-o>O')
+map('i', '[', '[]<left>')
+
 
 --[[ DAP mappings
 vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
