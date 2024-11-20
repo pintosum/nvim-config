@@ -72,6 +72,9 @@ map('i', '(', '()<left>')
 map('i', '{<CR>', '{<CR>}<C-o>O')
 map('i', '[', '[]<left>')
 
+vim.keymap.set("n", "<leader>w", "<cmd>set foldmethod=indent<CR><cmd>set foldmethod=manual<CR>")
+map('n', "<leader>ef", "zE")
+
 
 --[[ DAP mappings
 vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
