@@ -42,7 +42,7 @@ vim.keymap.set(
 
 vim.keymap.set("n", "<leader>q", function()
   local width = vim.fn.winwidth(0)
-  vim.cmd("vert ".. width/3 .. " split")
+  vim.cmd("vert ".. width/2.5 .. " split")
   vim.cmd("wincmd r")
   vim.cmd("term")
 end)
