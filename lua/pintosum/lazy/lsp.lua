@@ -28,9 +28,9 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "clangd",
-                "rust_analyzer",
+                --"rust_analyzer",
                 "pyright",
-                "ts_ls",
+                --"ts_ls",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
