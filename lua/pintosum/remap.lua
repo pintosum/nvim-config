@@ -52,6 +52,7 @@ vim.keymap.set("n", "<leader>gml", "<cmd>CellularAutomaton game_of_life<CR>");
 vim.keymap.set("n", "<leader>ba", "<cmd>CellularAutomaton bad_apple<CR>");
 vim.keymap.set("n", "<leader>mat", "<cmd>CellularAutomaton matrix<CR>");
 vim.keymap.set("n", "<leader>scr", "<cmd>CellularAutomaton scramble<CR>");
+vim.keymap.set("n", "<leader>tree", "<cmd>CellularAutomaton tree<CR>");
 
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
