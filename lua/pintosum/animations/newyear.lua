@@ -1,41 +1,61 @@
 local tree = {
   fps = 20,
   name = "tree",
-  grid = {},
+  grid = { { ' ', ' ', ' ', ' ', '*', ' ', ' ', ' ', ' ' },
+    { ' ', ' ', ' ', '/', '.', '\\', ' ',  ' ',  ' ' },
+    { ' ', ' ', '/', 'o', '.', '.',  '\\', ' ',  ' ' },
+    { ' ', ' ', '/', '.', '.', 'o',  '\\', ' ',  ' ' },
+    { ' ', '/', '.', 'o', '.', '.',  'o',  '\\', ' ' },
+    { ' ', '/', '.', '.', '.', 'o',  '.',  '\\', ' ' },
+    { '/', '.', '.', 'o', '.', '.',  '.',  '.',  '\\' },
+    { '^', '^', '^', '[', '_', ']',  '^',  '^',  '^' },
+  },
 }
 
 tree.init = function(grid)
-  local file = io.open("~/.config/nvim/lua/pintosum/animations/christmas_tree.txt")
-  if (file == nil) then return false end
-  for i = 1, 9 do
-    local line = file:read()
-    tree.grid[i] = {}
-    if (line == nil) then file:close(); return false;
-    end
-    print(#line)
-    for j = 1, #line do
-      tree.grid[i][j] = line:sub(j, j)
-      grid[i][j].char = tree.grid[i][j];
+  --vim.api.nvim_set_option(0, "filetype", "lua")
+  for i = 1, #grid do
+    for j = 1, #grid[i] do
+      if (i <= 8 and j <= 9) then
+        local char = tree.grid[i][j]
+        local hl
+        if (char == 'o') then
+          hl = "module.builtin"
+        elseif (char == '*') then
+          hl = "String"
+        elseif (char == '[' or char == ']' or char == '_') then
+          hl = "function"
+        end
+
+        grid[i][j].char = char
+        grid[i][j].hl_group = hl
+      else
+        grid[i][j].char = ' ';
+      end
     end
   end
-  --vim.api.nvim_set_option(0, 'filetype', 'lua')
   --print(vim.inspect(tree.grid))
 end
 
 tree.update = function(grid)
   for i = 1, #grid do
     for j = 1, #(grid[i]) do
-      local char = tree.grid[i][j]
-      local hl = "variable.member"
-      grid[i][j].char = char
-      if (char == 'o') then
-        hl = "module.builtin"
-      elseif (char == '*') then
-        hl = "String"
-      elseif (char == '[' or char == ']' or char == '_') then
-        hl = "function"
+      if (i < 8 and j < 9) then
+        local char = tree.grid[i][j]
+        local hl
+        if (char == 'o') then
+          hl = "module.builtin"
+        elseif (char == '*') then
+          hl = "String"
+        elseif (char == '[' or char == ']' or char == '_') then
+          hl = "function"
+        end
+
+        grid[i][j].char = char
+        grid[i][j].hl_group = hl
+      else
+        grid[i][j].char = ' ';
       end
-      grid[i][j].hl_group = hl
     end
   end
 end
