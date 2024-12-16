@@ -10,10 +10,17 @@ local tree = {
     { '/', '.', '.', 'o', '.', '.',  '.',  '.',  '\\' },
     { '^', '^', '^', '[', '_', ']',  '^',  '^',  '^' },
   },
+  clean = function()
+    ColorThis()
+  end,
 }
 
 tree.init = function(grid)
-  --vim.api.nvim_set_option(0, "filetype", "lua")
+  --vim.cmd("colorscheme christmas")
+
+  --vim.api.nvim_set
+
+
   for i = 1, #grid do
     for j = 1, #grid[i] do
       if (i <= 8 and j <= 9) then

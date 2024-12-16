@@ -14,7 +14,7 @@ local function iter(t)
   local i = 0
   local n = #t
   return function ()
-    i = i + 2
+    i = i + 4
     if i <= n then return i end
   end
 end
