@@ -36,6 +36,18 @@ end
 
 local win_id, bufnr = create_float()
 
+local augroup = vim.api.nvim_create_augroup
+local pintosumGroup = augroup('pintosum', {})
+local autocmd = vim.api.nvim_create_autocmd
+
+autocmd ('ExitPre', {
+  group = pintosumGroup,
+  pattern = '*',
+  callback = function()
+  end,
+})
+
+
 vim.fn.win_execute(win_id, "CellularAutomaton tree")
 
 

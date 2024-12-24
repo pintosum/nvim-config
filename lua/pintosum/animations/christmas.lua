@@ -61,13 +61,14 @@ tree.update = function(grid)
 			if i <= 8 and j <= 9 then
 				local char = tree.grid[i][j]
         --local hl = "DiagnosticHint"
-				local hl = "Added"
+        local hl = "Added"
 				if char == "o" then
 					hl = balls
 				elseif char == "*" then
 					hl = star
 				elseif char == "[" or char == "]" or char == "_" then
 					hl = "IncSearch"
+          hl = "DiffDelete"
 				end
 
 				grid[i][j].char = char
