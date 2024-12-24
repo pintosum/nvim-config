@@ -40,10 +40,11 @@ local augroup = vim.api.nvim_create_augroup
 local pintosumGroup = augroup('pintosum', {})
 local autocmd = vim.api.nvim_create_autocmd
 
-autocmd ('ExitPre', {
+autocmd ('QuitPre', {
   group = pintosumGroup,
   pattern = '*',
   callback = function()
+    vim.cmd("fclose")
   end,
 })
 

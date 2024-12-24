@@ -8,16 +8,6 @@ end
 
 return {
   {
-    "catppuccin/nvim",
-    config = function()
-      require("catppuccin").setup({
-        flavour = "macchiato",
-      })
-      --ColorThis("catppuccin")
-    end,
-  },
-
-  {
     "folke/tokyonight.nvim",
     config = function()
       require("tokyonight").setup({
