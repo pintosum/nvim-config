@@ -4,6 +4,7 @@ require("pintosum.set")
 require("pintosum.lazy_init")
 
 require("pintosum.animations")
+require("pintosum.redcorner")
 
 local augroup = vim.api.nvim_create_augroup
 local pintosumGroup = augroup('pintosum', {})
@@ -18,6 +19,14 @@ end
 
 
 --h
+
+autocmd ('InsertLeave', {
+  group = pintosumGroup,
+  pattern = '*',
+  callback = function()
+    vim.cmd(":w") end,
+})
+
 
 
 autocmd ('User', {

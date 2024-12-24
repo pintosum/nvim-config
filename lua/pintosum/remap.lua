@@ -54,6 +54,8 @@ vim.keymap.set("n", "<leader>mat", "<cmd>CellularAutomaton matrix<CR>");
 vim.keymap.set("n", "<leader>scr", "<cmd>CellularAutomaton scramble<CR>");
 vim.keymap.set("n", "<leader>tree", "<cmd>CellularAutomaton tree<CR>");
 
+vim.keymap.set("n", "<leader>o", "<cmd>q!<CR>");
+
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
