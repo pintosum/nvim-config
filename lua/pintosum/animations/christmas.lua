@@ -21,9 +21,6 @@ local tree = {
 }
 
 tree.init = function(grid)
-	--vim.cmd("colorscheme christmas")
-
-	--vim.api.nvim_set
 
 	for i = 1, #grid do
 		for j = 1, #grid[i] do
@@ -47,7 +44,6 @@ tree.init = function(grid)
 			end
 		end
 	end
-	--print(vim.inspect(tree.grid))
 end
 
 tree.update = function(grid)
@@ -56,7 +52,7 @@ tree.update = function(grid)
       local balls = "number"
       local star = "String"
       if (math.random(10) == 7) then balls = "Title"
-      elseif (math.random(10) == 2) then balls = "DiagnosticInfo" end
+      elseif (math.random(10) == 2) then balls = "DiagnosticError" end
       if (math.random(10) == 1) then star = "DiagnosticError" end
 			if i <= 8 and j <= 9 then
 				local char = tree.grid[i][j]
