@@ -1,3 +1,12 @@
+local function get_backing_window()
+  local winds = vim.api.nvim_list_uis()
+  return winds[1]
+end
+
+local function get()
+end
+
+
 local function create_float()
   local width = 12
   local height = 8
@@ -43,4 +52,3 @@ vim.api.nvim_create_autocmd('WinResized', {
     chr_tree()
   end
 })
-

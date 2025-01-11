@@ -4,7 +4,7 @@ require("pintosum.set")
 require("pintosum.lazy_init")
 
 require("pintosum.animations")
-require("pintosum.redcorner")
+--require("pintosum.redcorner")
 
 local augroup = vim.api.nvim_create_augroup
 local pintosumGroup = augroup('pintosum', {})
