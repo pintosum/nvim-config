@@ -19,6 +19,15 @@ end
 
 --h
 
+autocmd ('InsertLeave', {
+  group = wall,
+  pattern = '*',
+  callback = function()
+    vim.cmd("write")
+  end,
+})
+
+
 
 autocmd ('User', {
   group = wall,

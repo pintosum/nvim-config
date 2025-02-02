@@ -1,6 +1,6 @@
 return {
     "tpope/vim-fugitive",
-    config = function() 
+    config = function()
         vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 
         local pintosum_fugitive = vim.api.nvim_create_augroup("pintosum_fugitive", {})
