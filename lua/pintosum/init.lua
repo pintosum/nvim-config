@@ -1,10 +1,11 @@
-require("pintosum.remap")
 require("pintosum.set")
 
+require("pintosum.remap")
 require("pintosum.lazy_init")
 
 require("pintosum.animations")
 --require("pintosum.redcorner")
+require("pintosum.shrink")
 
 local augroup = vim.api.nvim_create_augroup
 local pintosumGroup = augroup('pintosum', {})
